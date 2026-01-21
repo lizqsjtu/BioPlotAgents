@@ -1,0 +1,31 @@
+1. Start local vLLM
+BioPlotAgents assumes a local vLLM server exposing an OpenAI-compatible API. In src/llm_langchain.py the default configuration is:
+
+llm = ChatOpenAI(
+    openai_api_base="http://12.12.12.62:8000/v1",
+    openai_api_key="EMPTY",
+    model="qwen2.5-coder-7b",
+    temperature=0.2,
+    max_tokens=512,
+)
+Adjust openai_api_base and model to match your environment.
+
+2. Install Python dependencies
+Inside your container or virtual environment:
+
+pip install -r requirements.txt
+A minimal set of packages includes:
+
+pandas
+seaborn
+matplotlib
+langchain
+langchain-openai
+langgraph
+pdf2image
+PyPDF2
+pydantic
+scikit-learn
+Pillow
+numpy
+vllm (server side)
